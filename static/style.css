@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Overpass+Mono");
+
+body {
+  font-family: "Overpass Mono", monospace;
+  font-size: calc(0.8rem + 0.2vw);
+  font-display: swap;
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: calc(1.1rem + 0.2vw);
+  margin: 1.5em 0;
+}
+
+h2 {
+  font-size: calc(1rem + 0.2vw);
+  margin: 1.5em 0;
+}
+
+h2::before {
+  content: "# ";
+}
+
+h3 {
+  font-size: calc(0.8rem + 0.3vw);
+  font-style: italic;
+  margin: 1.5em 0 0.5em 0;
+  color: #bfbfbf;
+}
+
+h3::before {
+  content: "## ";
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: #ff1493;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+a:hover {
+  color: #ccff00;
+}
+
+li {
+  list-style: lower-roman;
+  margin: 8px 16px;
+}
+
+pre code {
+  font-family: "Overpass Mono", monospace;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes fade {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

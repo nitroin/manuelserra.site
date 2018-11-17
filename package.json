@@ -1,0 +1,31 @@
+{
+  "name": "manuelserra.me",
+  "description": "My personal site built with Gatsby!",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf ./.cache ./public",
+    "prebuild": "yarn clean",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.8.0",
+    "front-matter": "^3.0.1",
+    "gatsby": "^2.0.48",
+    "gatsby-plugin-manifest": "^2.0.9",
+    "gatsby-plugin-offline": "^2.0.14",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-styled-components": "^3.0.1",
+    "htmr": "^0.7.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.1.1"
+  },
+  "devDependencies": {
+    "markdown-it": "^8.4.2",
+    "markdown-it-prism": "^1.1.2",
+    "rimraf": "^2.6.2"
+  }
+}

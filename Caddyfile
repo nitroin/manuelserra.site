@@ -1,0 +1,9 @@
+https://localhost {
+    root ./public
+    gzip
+    tls self_signed
+}
+
+http://localhost {
+    redir https://localhost
+}
