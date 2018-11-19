@@ -4,18 +4,18 @@ date: 2018-11-01T00:00:00.000Z
 title: Hello world!!
 description: >-
   This is my very first blog post in my very first personal website. Today I want
-  to share with you why I have chosen to have a personal space plus the philosophy
+  to share with you why I chose to have a personal space plus the philosophy
   and stack behind it. Hope you'll like it!
 ---
 
-## The why?
+## Why?
 
 As a software engineer, I never stop learning new things.
 
 That's literally what I **love** the most @work.
 
-On the other side I also love to **share** those technical knowing with people
-that finds it useful.
+On the other side I also love to **share** those technical knowledge with people
+that find it useful.
 
 > _In that moment I really feel my **purpose**._
 
