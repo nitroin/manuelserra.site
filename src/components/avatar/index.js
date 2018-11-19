@@ -3,9 +3,10 @@ import React from "react";
 import convert from "htmr";
 import styled from "styled-components";
 
-import colors from "../../commons/colors";
+import { randomFluo } from "../../commons/colors";
 
 import imagePath from "../../../static/images/me.webp";
+import imagePathFallback from "../../../static/images/me.jpg";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,10 +20,16 @@ const Container = styled.div`
   align-items: center;
 `;
 
+const Picture = styled.picture`
+  position: absolute;
+  width: 132px;
+  height: 132px;
+`;
+
 const Image = styled.img`
   position: absolute;
   border-radius: 64px;
-  padding: 2px;
+  margin: 2px;
   width: 128px;
 `;
 
@@ -31,7 +38,7 @@ const Border = styled.div`
   height: 128px;
   border-width: 4px;
   border-style: inset;
-  border-color: ${colors.blue};
+  border-color: ${randomFluo()};
   border-radius: 68px;
   animation: pulse 2.5s ease infinite, rotate 4.33s ease infinite both;
 `;
@@ -46,7 +53,10 @@ const Avatar = ({ description }) => (
   <Wrapper>
     <Container>
       <Border />
-      <Image src={imagePath} alt="hello me!" />
+      <Picture>
+        <source srcset={imagePath} type="image/webp" />
+        <Image src={imagePathFallback} />
+      </Picture>
     </Container>
     <Description>{convert(description)}</Description>
   </Wrapper>
