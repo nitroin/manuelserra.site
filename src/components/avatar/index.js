@@ -55,7 +55,7 @@ const Avatar = ({ description }) => (
       <Border />
       <Picture>
         <source srcset={imagePath} type="image/webp" />
-        <Image src={imagePathFallback} />
+        <Image src={imagePathFallback} alt="Manuel Serra, hello!" />
       </Picture>
     </Container>
     <Description>{convert(description)}</Description>
