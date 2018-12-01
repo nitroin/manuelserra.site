@@ -14,8 +14,8 @@ As a software engineer, I never stop learning new things.
 
 That's literally what I **love** the most @work.
 
-On the other side I also love to **share** those technical knowledge with people
-that find it useful.
+On the other side I also love to **share** this technical knowledge with people
+that can find it useful.
 
 > _In that moment I really feel my **purpose**._
 
@@ -35,7 +35,7 @@ During this roller caster it grows on me that:
 
 _And I hope that every software engineer on the planet will agree._
 
-And that's the point about this blog: having a personal blog-like site without
+And that's the point about this blog: having aq personal blog-like site without
 having **infrastructure** nor a **database** to maintain.
 
 ## The stack
@@ -43,14 +43,13 @@ having **infrastructure** nor a **database** to maintain.
 ### SSG or static site generators
 
 To actually forget having a **database** or **infrastructure** you need to strip
-out all the unneeded things and reach the least common multiple: that mean to
-outputs **the good old basic html/css**.
+out all the unneeded things and aim for the **MVP**: aka to output _the good and
+old basic html/css_.
 
 That means you need to consume and produce all the permutation of your site
 ahead-of-time (or ahead of navigation). That is: if we have 10k blog posts (_btw
-you're a proficient writer_) we'll need to traverse **all** of those posts and
-output and save the resulting html and style during **build-time**, before going
-live.
+you're a proficient writer_) we'll need to traverse **all** the posts and save
+the resulting processed html and style during **build-time**, before going live.
 
 That's actually what static site generators are supposed to do: generate all
 your site pages **with the least amount a work needed client side**. All in all
@@ -59,8 +58,7 @@ nonetheless can be
 [pretty heavy weight](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
 on the browser because we need to download and parse all our bundle (and all the
 frameworks and dependencies we're relaying on) before display the first pixel of
-your app, this can take some moment if the bundle is not trivial or not
-optimized.
+your app, this can take some time if the bundle is not trivial or not optimized.
 
 _Disclaimer: you can optimize **SPAs** too obv (chunks, defer render, Suspense,
 lazy), but that's not the point here._
@@ -68,10 +66,11 @@ lazy), but that's not the point here._
 > Processing all the data aot can appear cumbersome, but SSG are pretty fast
 > doing that.
 
-Ans so my SSG of choice is [Gatsby](https://www.gatsbyjs.org/):
+And so my SSG of choice is [Gatsby](https://www.gatsbyjs.org/) because:
 
 - I enjoy writing `React` components and the workflow in general (I really like
-  the strict separation between frontend and backend)
+  the strict separation between frontend and backend, `React` is the **V** of the
+  'old' **MVC**)
 - Is actually [_pretty fast_](https://twitter.com/kylemathews/status/1015048920987136000)
 - With its plugin foundation you can basically plug'n'play cool tools and having
   a ton of goodies in a matter of minutes (_some PWA goodies and service worker
@@ -80,11 +79,11 @@ Ans so my SSG of choice is [Gatsby](https://www.gatsbyjs.org/):
 ### ...but do you need [GraphQL](https://graphql.org/), _seems over-engineered to me!_
 
 That was a real concern from one colleagues of mine, specifically from [@pscanf](https://pscanf.com/)
-(_hint: his site also is statically generated from React_) - because I've a
-great esteem of him and I totally agreed with him, that need to be addressed.
+(_hint: his site also is statically generated from `React`_) - since I've a
+great esteem of him and I totally agreed with him, that needs to be addressed.
 
 But first, for those that are not familiar with [Gatsby](https://www.gatsbyjs.org/)
-this is more or less the canonical folder structure:
+this is more or less its canonical folder structure:
 
 ```bash
 ├── LICENSE
@@ -101,7 +100,7 @@ this is more or less the canonical folder structure:
     └── assets...
 ```
 
-That looks like a normal nodejs/React project apart from those 2 guys:
+That looks like a normal `nodejs/React` project apart from those 2 guys:
 `gatsby-node.js` and `gatsby-config.js`. The former is actually where the magic
 aoc happens - where we create our site pages statically - and where the
 misconception that you must use [GraphQL](https://graphql.org/) begin.
@@ -160,7 +159,8 @@ const Template = ({ pageContext: { attributes, content } }) => (
 );
 ```
 
-Gently wrapped into the `pageContext` property. No [GraphQL](https://graphql.org/) to care about!
+Gently wrapped into the `pageContext` property. No [GraphQL](https://graphql.org/)
+to care about!
 
 So our beloved `React` can render and outputs the html/css we need to deliver on
 our CDN. Ready to serve for clients browsers.
