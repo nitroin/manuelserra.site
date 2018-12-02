@@ -11,11 +11,11 @@ import twitter from "../../../static/images/twitter.svg";
 
 const Container = styled.footer`
   color: white;
+  padding: 8px 0;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-
-  padding: 8px 0;
 `;
 
 const Link = styled.a`
