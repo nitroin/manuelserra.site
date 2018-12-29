@@ -1,6 +1,7 @@
 import React from "react";
 
 import convert from "htmr";
+import readingTime from "reading-time";
 
 import styled from "styled-components";
 
@@ -34,10 +35,13 @@ const Subtitle = styled.h3`
   }
 `;
 
-const Subtle = styled.p`
+const Subtle = styled.div`
+  display: flex;
+  justify-content: ${props => props.justify};
+  align-items: ${props => props.align};
+
   font-size: 0.9em;
   color: ${colors.silver};
-  text-align: ${props => props.align};
   margin: 40px 0;
   animation: fade 0.5s ease 0.15s both;
 `;
@@ -83,18 +87,25 @@ const Content = styled.main`
   }
 `;
 
-const BlogPost = ({ title, description, date, content = {} }) => (
-  <Wrapper>
-    <Container>
-      <Padder>
-        <Title color={colors.orange} text={title} />
-        <Subtitle>{description}</Subtitle>
-        <Subtle align="end">{new Date(date).toLocaleDateString()}</Subtle>
-        <Content>{convert(content)}</Content>
-        <Subtle>:wq</Subtle>
-      </Padder>
-    </Container>
-  </Wrapper>
-);
+const BlogPost = ({ title, description, date, content = {} }) => {
+  const time = readingTime(content);
+
+  return (
+    <Wrapper>
+      <Container>
+        <Padder>
+          <Title color={colors.orange} text={title} />
+          <Subtitle>{description}</Subtitle>
+          <Subtle justify="space-between">
+            <span>{time.text}</span>
+            <span>{new Date(date).toLocaleDateString()}</span>
+          </Subtle>
+          <Content>{convert(content)}</Content>
+          <Subtle>:wq</Subtle>
+        </Padder>
+      </Container>
+    </Wrapper>
+  );
+};
 
 export default BlogPost;
