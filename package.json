@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
-    "front-matter": "^3.0.1",
+    "front-matter": "^3.0.2",
     "gatsby": "^2.0.91",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-offline": "^2.0.21",
