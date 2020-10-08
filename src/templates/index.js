@@ -22,6 +22,7 @@ const Wrapper = styled.div`
 `;
 
 const Main = styled.div`
+  max-width: 1200px;
   min-height: calc(100vh - 86px); /* 100vh minus Footer component */
 `;
 
